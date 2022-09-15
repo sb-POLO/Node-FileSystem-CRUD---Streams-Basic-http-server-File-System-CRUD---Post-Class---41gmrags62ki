@@ -13,7 +13,7 @@ const myFileReader = async (fileName) => {
 	// dont chnage function name
 	await fs.readFile(`./${fileName}`,(err,data)=>{
 		if(err) throw(err);
-		return data;
+		else return data;
 	});
 }
 
