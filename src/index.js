@@ -4,7 +4,7 @@ const myFileWriter = async (fileName, fileContent) => {
 	// write code here
 	// dont chnage function name
 	await fs.writeFile(fileName,fileContent,(err)=>{
-		if(err) return callback(err);
+		if(err) throw(err);
 	});
 }
 
