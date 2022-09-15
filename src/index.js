@@ -4,15 +4,15 @@ const myFileWriter = async (fileName, fileContent) => {
 	// write code here
 	// dont chnage function name
 	await fs.writeFile(fileName,fileContent,(err)=>{
-		if(err) throw(err);
+		if(err) throw err;
 	});
 }
 
 const myFileReader = async (fileName) => {
 	// write code here
 	// dont chnage function name
-	await fs.readFile(`./${fileName}`,(err,data)=>{
-		if(err) throw(err);
+	await fs.readFile(fileName,(err,data)=>{
+		if(err) throw err;
 		else return data;
 	});
 }
@@ -20,7 +20,9 @@ const myFileReader = async (fileName) => {
 const myFileUpdater = async (fileName, fileContent) => {
 	// write code here
 	// dont chnage function name
-	await fs.appendFile(fileName,fileContent);
+	await fs.appendFile(fileName,fileContent,(err)=>{
+		if(err) throw err;
+	});
 }
 
 const myFileDeleter = async (fileName) => {
