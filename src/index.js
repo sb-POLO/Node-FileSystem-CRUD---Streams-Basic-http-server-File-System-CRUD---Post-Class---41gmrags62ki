@@ -14,7 +14,8 @@ const myFileReader = async (fileName) => {
 	// dont chnage function name
 await fs.readFile(fileName,(err,data)=>{
 if(err)
-	console.log(err);
+	throw(err);
+console.log(data);
 });
 }
 
@@ -28,7 +29,7 @@ const myFileUpdater = async (fileName, fileContent) => {
 const myFileDeleter = async (fileName) => {
 	// write code here
 	// dont chnage function name
-fs.unlink(fileName);
+await fs.unlink(fileName);
 }
 
 
